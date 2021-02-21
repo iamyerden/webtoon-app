@@ -1,0 +1,33 @@
+.custom-week-nav {
+  background-color: #fff;
+  justify-content: center;
+}
+
+.custom-week-nav li a {
+  cursor: pointer;
+  display: block;
+  width: 120px;
+  padding: 18px 0;
+  text-align: center;
+  color: #000;
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all ease .1s;
+}
+
+.custom-week-nav li.active a {
+  color: #fff;
+  background-color: #00dc64;
+}
+
+.custom-week-nav li:not(.active) a:hover {
+  color: #00dc64;
+}
+
+.tab-close {
+  color: gray;
+  text-align: right;
+  cursor: pointer;
+}

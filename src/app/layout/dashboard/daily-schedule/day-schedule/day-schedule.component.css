@@ -1,0 +1,117 @@
+.pane{
+  min-height: 520px;
+  padding: 1em 0;
+}
+
+/* Composition */
+
+.composition-col {
+  max-width: 210px;
+  max-height: 210px;
+}
+
+.composition-col:nth-last-child(1) {
+  margin: 0;
+}
+
+.composition-item {
+  cursor: pointer;
+  width: 210px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.composition-main-description {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.composition-main-description, .composition-description {
+  padding: 18px 14px;
+}
+
+.composition-title {
+  font-size: 18px;
+}
+
+.composition-liked {
+  color: #00dc64;
+}
+
+.composition-liked fa-icon svg{
+  width: 14px;
+  fill: #00dc64;
+}
+
+.composition-liked .number {
+  margin-left: 5px;
+}
+
+.composition-genre {
+  position: absolute;
+  bottom: 14px;
+  color: #4a20e2;
+}
+
+.composition-img img {
+  display: block;
+  object-fit: cover;
+}
+
+.composition-description {
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  transition: all ease 0.2s;
+}
+
+.composition-author {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.composition-author:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.composition-summary {
+  font-size: 13px;
+  color: #f6f6f6;
+  font-weight: 300;
+}
+
+.composition-summary:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(to top,
+  rgba(74, 32, 226, 1) 0,
+  rgba(74, 32, 226, 1) 50%,
+  rgba(74, 32, 226, 0) 100%
+  );
+  pointer-events: none;
+  color: #00dc64;
+}
+
+.composition-item:hover .composition-description {
+  color: #fff;
+  opacity: 1;
+  background-color: #4a20e2;
+}

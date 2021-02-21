@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: hind, serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.section-gray {
+  background-color: rgba(244, 244, 244, 0.5);
+}
+
+.section-header {
+  cursor: pointer;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 500;
+}
