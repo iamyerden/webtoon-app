@@ -5,6 +5,7 @@ export class Composition {
   genre: string;
   publishWeek: string;
   likes: number;
+  status: string;
   description: string;
 
   constructor() {

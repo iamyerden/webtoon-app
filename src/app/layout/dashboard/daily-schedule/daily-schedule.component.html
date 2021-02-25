@@ -1,9 +1,0 @@
-<ul class="nav nav-tabs custom-week-nav">
-  <li (click)="chooseWeekDay(item)"
-      *ngFor="let item of week"
-      [ngClass]="{'active': item.active}">
-    <a>{{item.day}}</a>
-  </li>
-</ul>
-
-<app-day-schedule [weekDay]="chosenWeekDay"></app-day-schedule>

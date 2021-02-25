@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "value": "Mon",
+    "active": true
+  },
+  {
+    "id": 2,
+    "value": "Tue",
+    "active": false
+  },
+  {
+    "id": 3,
+    "value": "Wed",
+    "active": false
+  },
+  {
+    "id": 4,
+    "value": "Thu",
+    "active": false
+  },
+  {
+    "id": 5,
+    "value": "Fri",
+    "active": false
+  },
+  {
+    "id": 6,
+    "value": "Sat",
+    "active": false
+  },
+  {
+    "id": 7,
+    "value": "Sun",
+    "active": false
+  }
+]

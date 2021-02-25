@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DailyScheduleComponent } from './daily-schedule/daily-schedule.component';
+import { CompositionTabComponent } from './composition-tab/composition-tab.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { DayScheduleComponent } from './daily-schedule/day-schedule/day-schedule.component';
+import { CompositionTabItemComponent } from './composition-tab/composition-tab-item/composition-tab-item.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DailyScheduleComponent, DailyScheduleComponent, DayScheduleComponent],
+  declarations: [DashboardComponent, CompositionTabComponent, CompositionTabComponent, CompositionTabItemComponent],
     imports: [
       CommonModule,
       DashboardRoutingModule,

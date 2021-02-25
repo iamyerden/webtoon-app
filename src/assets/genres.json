@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "value": "Drama",
+    "active": true
+  },
+  {
+    "id": 2,
+    "value": "Fantasy",
+    "active": false
+  },
+  {
+    "id": 3,
+    "value": "Comedy",
+    "active": false
+  },
+  {
+    "id": 4,
+    "value": "Action",
+    "active": false
+  },
+  {
+    "id": 5,
+    "value": "Slice of life",
+    "active": false
+  },
+  {
+    "id": 6,
+    "value": "Romance",
+    "active": false
+  },
+  {
+    "id": 7,
+    "value": "Superhero",
+    "active": false
+  },
+  {
+    "id": 8,
+    "value": "Sci-fi",
+    "active": false
+  },
+  {
+    "id": 9,
+    "value": "Thriller",
+    "active": false
+  },
+  {
+    "id": 10,
+    "value": "Supernatural",
+    "active": false
+  }
+]

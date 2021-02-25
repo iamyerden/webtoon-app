@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "value": "Ongoing",
+    "active": true
+  },
+  {
+    "id": 2,
+    "value": "Completed",
+    "active": false
+  }
+]

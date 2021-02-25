@@ -1,6 +1,7 @@
 .pane{
   min-height: 520px;
   padding: 1em 0;
+  background-color: rgba(244, 244, 244, 0.5);
 }
 
 /* Composition */

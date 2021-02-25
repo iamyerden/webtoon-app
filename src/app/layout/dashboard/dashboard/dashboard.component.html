@@ -43,9 +43,8 @@
 </div>
 
 <div class="section-gray">
-  <app-daily-schedule></app-daily-schedule>
+  <app-composition-tab [tabInput]="'schedule'" [tabSize]="10"></app-composition-tab>
 
-<!--  <app-daily-schedule></app-daily-schedule>-->
 
   <hr>
 
@@ -280,7 +279,7 @@
   <hr>
 
   <div class='container py-3'>
-    <div class="section-header text-uppercase">
+    <div class="section-header text-uppercase" [routerLink]="'/explore/genre'">
       <span>Genres</span>
       <span><fa-icon size="sm" [icon]="faArrowRight"></fa-icon></span>
     </div>

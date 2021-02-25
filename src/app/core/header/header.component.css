@@ -10,6 +10,14 @@
   margin: 0 15px;
 }
 
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item:focus {
+  outline: none;
+}
+
 .nav-link {
   padding: 0 18px!important;
   font-size: 20px;

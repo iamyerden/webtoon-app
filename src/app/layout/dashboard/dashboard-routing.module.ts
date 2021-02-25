@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {DailyScheduleComponent} from './daily-schedule/daily-schedule.component';
+import {CompositionTabComponent} from './composition-tab/composition-tab.component';
 
 const routes: Routes = [
   {
@@ -9,10 +9,9 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'daily-schedule',
-    component: DailyScheduleComponent
+    path: 'explore/:tab',
+    component: CompositionTabComponent
   }
-
 ];
 
 @NgModule({

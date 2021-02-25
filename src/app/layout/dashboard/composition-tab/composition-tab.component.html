@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs custom-week-nav">
+  <li (click)="chooseTabItem(item)"
+      *ngFor="let item of chosenTabArr"
+      [ngClass]="{'active': item.active}">
+    <a>{{item.value}}</a>
+  </li>
+</ul>
+
+<app-composition-tab-item [tabItem]="chosenTab" [tabSize]="tabSize"></app-composition-tab-item>
