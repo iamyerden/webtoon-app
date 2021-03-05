@@ -2,7 +2,7 @@
   <li (click)="chooseTabItem(item)"
       *ngFor="let item of chosenTabArr"
       [ngClass]="{'active': item.active}">
-    <a>{{item.value}}</a>
+    <a>{{item.value | uppercase}}</a>
   </li>
 </ul>
 
