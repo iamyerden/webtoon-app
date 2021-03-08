@@ -39,3 +39,8 @@ body::-webkit-scrollbar-thumb
   border-radius: 2px;
   background-color: #202020;
 }
+
+.default-text {
+  font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
+  font-size: 17px;
+}

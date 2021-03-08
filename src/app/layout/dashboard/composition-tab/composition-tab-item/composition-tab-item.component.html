@@ -1,9 +1,9 @@
 <div class="pane">
 
-  <div class='container'>
-    <div class='row my-3 justify-content-center'>
+  <div class="container">
+    <div class="row my-3">
 
-      <div *ngFor="let composition of compositionsByTab" class='col composition-col mr-3 my-2'>
+      <div *ngFor="let composition of compositionsByTab | sort:'likes'" class="col composition-col mr-3 my-2">
         <div class="composition-item">
           <div class="composition-main-description">
             <h5 class="composition-title">{{composition.title}} {{composition.id}}</h5>
@@ -11,12 +11,14 @@
               <fa-icon [icon]="faHeart"></fa-icon>
               <span class="number">{{composition.likes / 1000000}}</span><span class="symbol">M</span>
             </div>
-            <div class="composition-genre">{{composition.genre}}</div>
+            <div class="composition-genre" [ngStyle]="{'color': composition.genre.color}">
+              {{composition.genre.value}}
+            </div>
           </div>
           <div class="composition-img">
             <img src="assets/images/hero-composition.jpg" alt="">
           </div>
-          <div appDisplay class="composition-description">
+          <div appDisplay class="composition-description" [ngStyle]="{'background-color': composition.genre.color}">
             <h5 class="composition-title">{{composition.title}}</h5>
             <h6 class="composition-author">{{composition.author}}</h6>
             <p class="composition-summary">

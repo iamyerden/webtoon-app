@@ -1,0 +1,75 @@
+/* Download App */
+.footer-app, .footer-content {
+  border-top: 1px solid #e5e5e5;
+  padding: 25px 0 30px;
+}
+
+.footer-app {
+  justify-content: center;
+}
+
+.download-btn {
+}
+
+
+/* Social links */
+.footer-social {
+  color: #202020;
+  margin: 0 15px;
+  transition: all ease .1s;
+}
+
+.footer-social:hover {
+  cursor: pointer;
+  color: #00dc64;
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Footer menu links */
+.footer-link {
+  position: relative;
+  margin: 0 1rem;
+  transition: all ease .1s;
+}
+
+.footer-link a:hover {
+  cursor: pointer;
+  color: #00dc64;
+}
+
+.footer-link:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -1rem;
+  display: block;
+  width: 1px;
+  height: 60%;
+  background-color: #e5e5e5;
+}
+
+.footer-link:nth-last-child(1):after {
+  display: none;
+}
+
+
+/* Footer copyright */
+.footer-copyright {
+  font-size: 14px;
+  color: #c5c5c5;
+}
+
+
+/* Footer Logo */
+.footer-logo {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #00dc64;
+}

@@ -17,12 +17,16 @@
 }
 
 .custom-week-nav li.active a {
-  color: #fff;
+  color: #fff!important;
   background-color: #00dc64;
 }
 
-.custom-week-nav li:not(.active) a:hover {
+.custom-week-nav li a:hover {
   color: #00dc64;
+}
+
+::ng-deep .custom-week-nav li.active a:hover {
+  color: initial!important;
 }
 
 .tab-close {

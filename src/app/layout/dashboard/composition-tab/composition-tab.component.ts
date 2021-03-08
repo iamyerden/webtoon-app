@@ -15,6 +15,7 @@ export class CompositionTabComponent implements OnInit {
   tab: string;
   chosenTabArr: any[];
   chosenTab: any;
+  hovered: number;
 
   originals: any[] = [];
   week: any[] = [];
@@ -87,6 +88,12 @@ export class CompositionTabComponent implements OnInit {
   removeClasses(): void {
     for (const item of this.chosenTabArr) {
       item.active = false;
+    }
+  }
+
+  activeStyle(item: any): void {
+    if (this.tab === 'genre') {
+
     }
   }
 }

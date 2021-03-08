@@ -8,15 +8,23 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { CompositionTabItemComponent } from './composition-tab/composition-tab-item/composition-tab-item.component';
 import {DisplayDirective} from '../core/directives/display.directive';
+import {SortArrayPipe} from '../core/pipes/sortArray.pipe';
 
 
 @NgModule({
-  declarations: [DashboardComponent, CompositionTabComponent, CompositionTabComponent, CompositionTabItemComponent, DisplayDirective],
+  declarations: [
+    DashboardComponent,
+    CompositionTabComponent,
+    CompositionTabComponent,
+    CompositionTabItemComponent,
+    DisplayDirective,
+    SortArrayPipe
+  ],
     imports: [
       CommonModule,
       DashboardRoutingModule,
       IvyCarouselModule,
-      FontAwesomeModule
+      FontAwesomeModule,
     ]
 })
 export class DashboardModule { }

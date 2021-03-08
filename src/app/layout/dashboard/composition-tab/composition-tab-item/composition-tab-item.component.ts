@@ -2,6 +2,7 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {CompositionService} from '../../../core/services/composition.service';
 import {faHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 import {Composition} from '../../../core/models/composition';
+import {GeneralService} from '../../../core/services/general.service';
 
 @Component({
   selector: 'app-composition-tab-item',
@@ -20,10 +21,16 @@ export class CompositionTabItemComponent implements OnInit, OnChanges {
   compositions: Composition[] = [];
   compositionsByTab: Composition[] = [];
 
-  constructor(private compositionService: CompositionService) { }
+  genres: any[];
+
+  constructor(private compositionService: CompositionService, private generalService: GeneralService) { }
 
   ngOnInit(): void {
-    this.getCompositions();
+    this.generalService.getGenres().subscribe(res => {
+      this.genres = res;
+
+      this.getCompositions();
+    });
   }
 
   ngOnChanges(): void {
@@ -33,28 +40,32 @@ export class CompositionTabItemComponent implements OnInit, OnChanges {
   getCompositions(): void {
     this.compositionService.getCompositions().subscribe(res => {
       this.compositions = res;
-      this.getCompositionsByTabItem();
+      this.getCompositionGenres();
     });
+  }
+
+  getCompositionGenres(): void {
+    for (const item of this.compositions) {
+      item.genre = this.generalService.getItemById(this.genres, item.genreId);
+    }
+    console.log(this.compositions);
+    this.getCompositionsByTabItem();
   }
 
   getCompositionsByTabItem(): void {
     this.compositionsByTab = [];
     for (const item of this.compositions) {
-      console.log(this.tabItem?.value.toLowerCase());
       if (item.publishWeek.toLowerCase() === this.tabItem?.value.toLowerCase()
-        || item.genre.toLowerCase() === this.tabItem?.value.toLowerCase()
+        || item.genre?.value.toLowerCase() === this.tabItem?.value.toLowerCase()
         || item.status.toLowerCase() === this.tabItem?.value.toLowerCase()) {
         this.compositionsByTab.push(item);
       }
     }
 
-    console.log(this.compositionsByTab);
-
     if (this.tabSize) {
       this.compositionsByTab = this.compositionsByTab.slice(0, this.tabSize);
     }
 
-    console.log(this.compositionsByTab);
-
   }
+
 }

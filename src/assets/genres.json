@@ -2,51 +2,61 @@
   {
     "id": 1,
     "value": "Drama",
+    "color": "#00b19a",
     "active": true
   },
   {
     "id": 2,
     "value": "Fantasy",
+    "color": "#8b00e9",
     "active": false
   },
   {
     "id": 3,
     "value": "Comedy",
+    "color": "#eea800",
     "active": false
   },
   {
     "id": 4,
     "value": "Action",
+    "color": "#006afa",
     "active": false
   },
   {
     "id": 5,
     "value": "Slice of life",
+    "color": "#9ab710",
     "active": false
   },
   {
     "id": 6,
     "value": "Romance",
+    "color": "#fd337f",
     "active": false
   },
   {
     "id": 7,
     "value": "Superhero",
+    "color": "#4a20e2",
     "active": false
   },
   {
     "id": 8,
     "value": "Sci-fi",
+    "color": "#2d4464",
     "active": false
   },
   {
     "id": 9,
     "value": "Thriller",
+    "color": "#c00355",
     "active": false
   },
   {
     "id": 10,
     "value": "Supernatural",
+    "color": "#7a41e9",
     "active": false
   }
 ]

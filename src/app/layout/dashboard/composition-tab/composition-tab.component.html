@@ -1,8 +1,12 @@
-<ul class="nav nav-tabs custom-week-nav">
-  <li (click)="chooseTabItem(item)"
-      *ngFor="let item of chosenTabArr"
+<ul class="nav nav-tabs sticky-top custom-week-nav">
+  <li *ngFor="let item of chosenTabArr; let i = index"
+      (click)="chooseTabItem(item)"
       [ngClass]="{'active': item.active}">
-    <a>{{item.value | uppercase}}</a>
+    <a [ngStyle]="hovered == i ?
+    {'background-color': item.active ? item.color : '#fff', 'font-size': this.tab === 'genre' ? '15px' : '19px', 'color': this.tab === 'genre' ? item.color : '#00dc64'}
+    : {'background-color': item.active ? item.color : '#fff', 'font-size': this.tab === 'genre' ? '15px' : '19px', 'color': '#000'}"
+       (mouseover)="hovered = i"
+       (mouseout)="hovered = -1">{{item.value | uppercase}}</a>
   </li>
 </ul>
 

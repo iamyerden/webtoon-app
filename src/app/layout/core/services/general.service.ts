@@ -22,4 +22,13 @@ export class GeneralService {
   getGenres(): Observable<any> {
     return this.http.get('./assets/genres.json');
   }
+
+  getItemById(arr: any, id: number): any {
+    for (const item of arr) {
+      if (item.id === id) {
+        return item;
+      }
+    }
+    return null;
+  }
 }
