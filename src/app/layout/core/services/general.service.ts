@@ -23,7 +23,7 @@ export class GeneralService {
   getItemById(arr: any, id: number): any {
     for (const item of arr) {
       if (item.id === id) {
-        this.loggingService.log('Found item: ' + item);
+        this.loggingService.log('Found item by Id!');
         return item;
       }
     }

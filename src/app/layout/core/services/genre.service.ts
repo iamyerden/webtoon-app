@@ -13,8 +13,8 @@ export class GenreService {
 
   constructor(private http: HttpClient, private loggingService: LoggingService) {
     this.getGenres().subscribe(res => {
-      this.loggingService.log('Got genres: ' + this.genres);
       this.genres = res;
+      this.loggingService.log('Got genres!');
     });
   }
 
@@ -25,7 +25,7 @@ export class GenreService {
   getGenreById(genreId: number): Genre {
     for (const genre of this.genres) {
       if (genre.id === genreId) {
-        this.loggingService.log('Found genre by id ' + genreId + ': ' + genre);
+        this.loggingService.log('Found genre by id ' + genreId);
         return genre;
       }
     }
