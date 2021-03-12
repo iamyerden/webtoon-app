@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {LoggingService} from './logging.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private loggingService: LoggingService) {
 
   }
 
@@ -19,13 +20,10 @@ export class GeneralService {
     return this.http.get('./assets/week.json');
   }
 
-  getGenres(): Observable<any> {
-    return this.http.get('./assets/genres.json');
-  }
-
   getItemById(arr: any, id: number): any {
     for (const item of arr) {
       if (item.id === id) {
+        this.loggingService.log('Found item: ' + item);
         return item;
       }
     }

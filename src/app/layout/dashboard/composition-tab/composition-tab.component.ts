@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {GeneralService} from '../../core/services/general.service';
+import {GenreService} from '../../core/services/genre.service';
 
 @Component({
   selector: 'app-composition-tab',
@@ -22,7 +23,8 @@ export class CompositionTabComponent implements OnInit {
   genres: any[] = [];
 
   constructor(private route: ActivatedRoute,
-              private generalService: GeneralService) {
+              private generalService: GeneralService,
+              private genreService: GenreService) {
   }
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class CompositionTabComponent implements OnInit {
       this.originals = res1;
       this.generalService.getWeekDays().subscribe(res2 => {
         this.week = res2;
-        this.generalService.getGenres().subscribe(res3 => {
+        this.genreService.getGenres().subscribe(res3 => {
           this.genres = res3;
 
           // Define tab by url param

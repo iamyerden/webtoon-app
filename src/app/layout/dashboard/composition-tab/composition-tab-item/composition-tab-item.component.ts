@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {CompositionService} from '../../../core/services/composition.service';
 import {faHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 import {Composition} from '../../../core/models/composition';
-import {GeneralService} from '../../../core/services/general.service';
+import {GenreService} from '../../../core/services/genre.service';
 
 @Component({
   selector: 'app-composition-tab-item',
@@ -23,10 +23,10 @@ export class CompositionTabItemComponent implements OnInit, OnChanges {
 
   genres: any[];
 
-  constructor(private compositionService: CompositionService, private generalService: GeneralService) { }
+  constructor(private compositionService: CompositionService, private genreService: GenreService) { }
 
   ngOnInit(): void {
-    this.generalService.getGenres().subscribe(res => {
+    this.genreService.getGenres().subscribe(res => {
       this.genres = res;
 
       this.getCompositions();
@@ -46,7 +46,7 @@ export class CompositionTabItemComponent implements OnInit, OnChanges {
 
   getCompositionGenres(): void {
     for (const item of this.compositions) {
-      item.genre = this.generalService.getItemById(this.genres, item.genreId);
+      item.genre = this.genreService.getGenreById(item.genreId);
     }
     console.log(this.compositions);
     this.getCompositionsByTabItem();
