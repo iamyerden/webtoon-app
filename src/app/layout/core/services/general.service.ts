@@ -13,11 +13,11 @@ export class GeneralService {
   }
 
   getStatuses(): Observable<any> {
-    return this.http.get('./assets/statuses.json');
+    return this.http.get('./assets/fake-db/statuses.json');
   }
 
   getWeekDays(): Observable<any> {
-    return this.http.get('./assets/week.json');
+    return this.http.get('./assets/fake-db/week.json');
   }
 
   getItemById(arr: any, id: number): any {

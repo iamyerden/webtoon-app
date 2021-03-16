@@ -44,3 +44,39 @@ body::-webkit-scrollbar-thumb
   font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
   font-size: 17px;
 }
+
+.custom-gray-button {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 16px;
+  background-color: #2f2f2f;
+  border: none;
+  border-radius: 26px;
+  transition: all ease 0.1s;
+}
+
+.custom-gray-button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.right-arrow {
+  position: relative;
+}
+
+.right-arrow:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-70%);
+}
+

@@ -287,213 +287,68 @@
     <div class='row my-3'>
       <div class='col composition-col mr-3'>
         <div class="composition-item">
-          <div class="genre-item">
-            <h5 class="genre-title">Superhero</h5>
+          <div class="genre-item" [ngStyle]="{'background-color': genreOne.color}">
+            <h5 class="genre-title">{{genreOne.value}}</h5>
             <fa-icon class="genre-arrow" [icon]="faArrowRight"></fa-icon>
             <h6 class="genre-tags">Immerse, Imagine, and Inspire.</h6>
           </div>
         </div>
       </div>
 
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
+      <div *ngFor="let composition of compositionsOne" class='col composition-col mr-3'>
+        <div class="composition-item" [routerLink]="['/composition/' + composition.titleCode + '/list']">
           <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
+            <h5 class="composition-title">{{composition.title}}</h5>
             <div class="composition-liked">
               <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
+              <span class="number">{{composition.likes | shortNumber}}</span>
             </div>
-            <div class="composition-genre">Superhero</div>
+            <div class="composition-genre">{{composition.genre.value}}</div>
           </div>
           <div class="composition-img">
             <img src="assets/images/hero-composition.jpg" alt="">
           </div>
           <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
+            <h5 class="composition-title">{{composition.title}}</h5>
+            <h6 class="composition-author">{{composition.author}}</h6>
             <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
+              {{composition.description}}
             </p>
           </div>
         </div>
       </div>
 
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
-          <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <div class="composition-liked">
-              <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
-            </div>
-            <div class="composition-genre">Superhero</div>
-          </div>
-          <div class="composition-img">
-            <img src="assets/images/hero-composition.jpg" alt="">
-          </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
-            <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
-          <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <div class="composition-liked">
-              <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
-            </div>
-            <div class="composition-genre">Superhero</div>
-          </div>
-          <div class="composition-img">
-            <img src="assets/images/hero-composition.jpg" alt="">
-          </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
-            <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
-          <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <div class="composition-liked">
-              <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
-            </div>
-            <div class="composition-genre">Superhero</div>
-          </div>
-          <div class="composition-img">
-            <img src="assets/images/hero-composition.jpg" alt="">
-          </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
-            <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class='row my-3'>
       <div class='col composition-col mr-3'>
         <div class="composition-item">
-          <div class="genre-item">
-            <h5 class="genre-title">Superhero</h5>
+          <div class="genre-item" [ngStyle]="{'background-color': genreTwo.color}">
+            <h5 class="genre-title">{{genreTwo.value}}</h5>
             <fa-icon class="genre-arrow" [icon]="faArrowRight"></fa-icon>
             <h6 class="genre-tags">Immerse, Imagine, and Inspire.</h6>
           </div>
         </div>
       </div>
 
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
+      <div *ngFor="let composition of compositionsTwo" class='col composition-col mr-3'>
+        <div class="composition-item" [routerLink]="['/composition/' + composition.titleCode + '/list']">
           <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
+            <h5 class="composition-title">{{composition.title}}</h5>
             <div class="composition-liked">
               <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
+              <span class="number">{{composition.likes | shortNumber}}</span>
             </div>
-            <div class="composition-genre">Superhero</div>
+            <div class="composition-genre" [ngStyle]="{'color': composition.genre.color}">{{composition.genre.value}}</div>
           </div>
           <div class="composition-img">
             <img src="assets/images/hero-composition.jpg" alt="">
           </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
+          <div class="composition-description" [ngStyle]="{'background-color': composition.genre.color}">
+            <h5 class="composition-title">{{composition.title}}</h5>
+            <h6 class="composition-author">{{composition.author}}</h6>
             <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
-          <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <div class="composition-liked">
-              <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
-            </div>
-            <div class="composition-genre">Superhero</div>
-          </div>
-          <div class="composition-img">
-            <img src="assets/images/hero-composition.jpg" alt="">
-          </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
-            <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
-          <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <div class="composition-liked">
-              <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
-            </div>
-            <div class="composition-genre">Superhero</div>
-          </div>
-          <div class="composition-img">
-            <img src="assets/images/hero-composition.jpg" alt="">
-          </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
-            <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class='col composition-col mr-3'>
-        <div class="composition-item">
-          <div class="composition-main-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <div class="composition-liked">
-              <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">38.4</span><span class="symbol">M</span>
-            </div>
-            <div class="composition-genre">Superhero</div>
-          </div>
-          <div class="composition-img">
-            <img src="assets/images/hero-composition.jpg" alt="">
-          </div>
-          <div class="composition-description">
-            <h5 class="composition-title">unOrdinary</h5>
-            <h6 class="composition-author">uru-chan</h6>
-            <p class="composition-summary">
-              Nobody paid much attention to John – just a normal teenager at a high school where the social elite happen
-              to possess unthinkable powers and abilities. But John’s got a secret past that threatens ...
+              {{composition.description}}
             </p>
           </div>
         </div>

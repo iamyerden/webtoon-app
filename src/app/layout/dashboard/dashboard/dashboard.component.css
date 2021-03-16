@@ -151,21 +151,21 @@
   font-weight: 300;
 }
 
-.composition-summary:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 20px;
-  width: 100%;
-  background: linear-gradient(to top,
-  rgba(74, 32, 226, 1) 0,
-  rgba(74, 32, 226, 1) 50%,
-  rgba(74, 32, 226, 0) 100%
-  );
-  pointer-events: none;
-  color: #00dc64;
-}
+/*.composition-summary:after {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  height: 20px;*/
+/*  width: 100%;*/
+/*  background: linear-gradient(to top,*/
+/*  rgba(74, 32, 226, 1) 0,*/
+/*  rgba(74, 32, 226, 1) 50%,*/
+/*  rgba(74, 32, 226, 0) 100%*/
+/*  );*/
+/*  pointer-events: none;*/
+/*  color: #00dc64;*/
+/*}*/
 
 
 .composition-item:hover .composition-description {

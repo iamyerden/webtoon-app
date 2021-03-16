@@ -1,0 +1,28 @@
+.episode-row:first-child {
+  border-top: 1px solid #f5f5f5;
+}
+
+.episode-row {
+  border-bottom: 1px solid #f5f5f5;
+  transition: all ease 0.1s;
+}
+
+.episode-row:hover {
+  cursor: pointer;
+  background-color: #fbfbfb;
+}
+
+.episode-image {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to right, #b1babe, #eef2f3);
+}
+
+.episode-row:nth-child(2n + 1) .episode-image {
+  background: linear-gradient(to right, #c7d1d4, #f3f5f5);
+}
+
+.episode-date, .episode-likes {
+  font-weight: 300;
+  color: #b1b1b1;
+}

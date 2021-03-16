@@ -1,0 +1,42 @@
+<div class="composition-detail section-gray">
+  <div *ngIf="currentComposition" class="composition-background" [ngStyle]="{'background-color': currentComposition.genre.color}">
+    <div class="composition-header">
+      <div class="composition-genre-name">{{currentComposition.genre.value}}</div>
+      <div class="composition-title">{{currentComposition.title}}</div>
+      <div class="composition-author"><span>{{currentComposition.author}}</span><fa-icon [icon]="faInfoCircle"></fa-icon></div>
+    </div>
+  </div>
+
+  <div class="composition-list-container container" *ngIf="currentComposition">
+    <div class="row px-3">
+      <div class="col-8 composition-list">
+        <app-composition-list [currentComposition]="currentComposition"></app-composition-list>
+      </div>
+      <div class="col-4 composition-info px-5">
+        <div class="row">
+          <div class="composition-info-field pr-3">
+            <fa-icon [icon]="faUserCheck"></fa-icon>
+            <span>{{currentComposition.subscribers | shortNumber}}</span>
+          </div>
+          <div class="composition-info-field pl-3">
+            <fa-icon [icon]="faStar"></fa-icon>
+            <span>{{currentComposition.rate}}</span>
+            <span class="composition-rate">Rate</span>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="composition-description-title">Every {{currentComposition.publishWeek}}</div>
+          <div class="composition-description-content my-2">
+            {{currentComposition.description}}
+          </div>
+        </div>
+
+        <div class="row my-4">
+          <button class="custom-gray-button right-arrow">Continue reading</button>
+          <button class="custom-gray-button right-arrow">First episode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+.composition-background {
+  height: 300px;
+
+  text-align: center;
+  color: #fff;
+}
+
+.composition-header {
+  position: relative;
+  top: 50px;
+}
+
+.composition-genre-name, .composition-author {
+  font-size: 20px;
+}
+
+.composition-title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.composition-author span {
+  margin: 0 10px;
+}
+
+.composition-author {
+  display: inline-block;
+  transition: color ease .1s;
+}
+
+.composition-author fa-icon {
+  color: #e5e5e5;
+}
+
+.composition-author:hover, .composition-author:hover > fa-icon {
+  cursor: pointer;
+  color: #fff;
+}
+
+.composition-list-container {
+  position: relative;
+  top: -80px;
+  background-color: #fff;
+}
+
+.composition-list, .composition-info {
+  padding: 50px 0;
+}
+
+.composition-list {
+  border-right: 2px solid #f6f6f6;
+}
+
+.composition-info-field:first-child {
+  border-right: 3px solid #f6f6f6;
+}
+
+.composition-info-field fa-icon{
+  position: relative;
+  top: 2px;
+  font-size: 18px;
+  color: #00dc64;
+}
+
+.composition-info-field span {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.composition-rate {
+  font-size: 13px!important;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background-color: #00dc64;
+}
+
+.composition-description-title {
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.composition-description-content {
+  line-height: 1.7;
+}

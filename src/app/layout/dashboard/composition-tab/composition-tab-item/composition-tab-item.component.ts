@@ -1,8 +1,9 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {CompositionService} from '../../../core/services/composition.service';
-import {faHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 import {Composition} from '../../../core/models/composition';
 import {GenreService} from '../../../core/services/genre.service';
+
+import {faHeart} from '@fortawesome/free-solid-svg-icons/faHeart';
 
 @Component({
   selector: 'app-composition-tab-item',
@@ -45,10 +46,12 @@ export class CompositionTabItemComponent implements OnInit, OnChanges {
   }
 
   getCompositionGenres(): void {
-    for (const item of this.compositions) {
-      item.genre = this.genreService.getGenreById(item.genreId);
-    }
-    this.getCompositionsByTabItem();
+    this.genreService.getGenres().subscribe(res => {
+      for (const item of this.compositions) {
+        item.genre = this.genreService.getGenreById(res, item.genreId);
+      }
+      this.getCompositionsByTabItem();
+    });
   }
 
   getCompositionsByTabItem(): void {

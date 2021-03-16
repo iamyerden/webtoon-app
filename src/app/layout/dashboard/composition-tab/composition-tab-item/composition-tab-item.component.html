@@ -4,12 +4,12 @@
     <div class="row my-3">
 
       <div *ngFor="let composition of compositionsByTab | sort:'likes'" class="col composition-col mr-3 my-2">
-        <div class="composition-item">
+        <div class="composition-item" [routerLink]="['/composition/' + composition.titleCode + '/list']">
           <div class="composition-main-description">
             <h5 class="composition-title">{{composition.title}} {{composition.id}}</h5>
             <div class="composition-liked">
               <fa-icon [icon]="faHeart"></fa-icon>
-              <span class="number">{{composition.likes / 1000000}}</span><span class="symbol">M</span>
+              <span class="number">{{composition.likes | shortNumber}}</span>
             </div>
             <div class="composition-genre" [ngStyle]="{'color': composition.genre.color}">
               {{composition.genre.value}}

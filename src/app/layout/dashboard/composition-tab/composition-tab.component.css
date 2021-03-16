@@ -1,6 +1,7 @@
 .custom-week-nav {
   background-color: #fff;
   justify-content: center;
+  z-index: 100000;
 }
 
 .custom-week-nav li a {

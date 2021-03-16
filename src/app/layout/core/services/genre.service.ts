@@ -9,23 +9,27 @@ import {LoggingService} from './logging.service';
 })
 export class GenreService {
 
-  genres: Genre[] = null;
-
   constructor(private http: HttpClient, private loggingService: LoggingService) {
-    this.getGenres().subscribe(res => {
-      this.genres = res;
-      this.loggingService.log('Got genres!');
-    });
   }
 
   getGenres(): Observable<any> {
-    return this.http.get('./assets/genres.json');
+    return this.http.get('./assets/fake-db/genres.json');
   }
 
-  getGenreById(genreId: number): Genre {
-    for (const genre of this.genres) {
+  getGenreById(genres: Genre[], genreId: number): Genre {
+    for (const genre of genres) {
       if (genre.id === genreId) {
         this.loggingService.log('Found genre by id ' + genreId);
+        return genre;
+      }
+    }
+    return null;
+  }
+
+  getGenreByValue(genres: Genre[], genreValue: string): Genre {
+    for (const genre of genres) {
+      if (genre.value === genreValue) {
+        this.loggingService.log('Found genre by value ' + genreValue);
         return genre;
       }
     }
