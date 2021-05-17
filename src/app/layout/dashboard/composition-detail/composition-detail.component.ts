@@ -34,11 +34,12 @@ export class CompositionDetailComponent implements OnInit {
   getCurrentCompositionData(): void {
     this.compositionService.getCompositions().subscribe(res => {
       this.compositions = res;
-      this.currentComposition = this.compositionService.getCompositionByTitleCode(this.compositions, this.titleCode);
-      this.genreService.getGenres().subscribe(result => {
-        this.currentComposition.genre = this.genreService.getGenreById(result, this.currentComposition.genreId);
+      this.compositionService.getCompositionByTitleCode(this.titleCode).subscribe(resByTitle => {
+        this.currentComposition = resByTitle[0];
+        this.genreService.getGenreById(this.currentComposition.genreId).subscribe(resGenre => {
+          this.currentComposition.genre = resGenre[0];
+        });
       });
-      console.log('currentComposition:', this.currentComposition);
     });
   }
 

@@ -13,16 +13,10 @@ export class EpisodeService {
   }
 
   getEpisodes(): Observable<any> {
-    return this.http.get('./assets/fake-db/episodes.json');
+    return this.http.get('http://localhost:3000/episodes');
   }
 
-  getEpisodesByCompositionId(episodes: Episode[], compositionId: number): any {
-    let foundEpisodes: Episode[] =  [];
-    for (const episode of episodes) {
-      if (episode.compositionId === compositionId) {
-        foundEpisodes.push(episode);
-      }
-    }
-    return foundEpisodes;
+  getEpisodesByCompositionId(compositionId: number): any {
+    return this.http.get(`http://localhost:3000/episodes?compositionId=` + compositionId);
   }
 }

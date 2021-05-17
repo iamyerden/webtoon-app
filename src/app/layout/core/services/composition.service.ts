@@ -14,7 +14,7 @@ export class CompositionService {
   }
 
   getCompositions(): Observable<any> {
-    return this.http.get('./assets/fake-db/compositions.json');
+    return this.http.get('http://localhost:3000/compositions');
   }
 
   getCompositionByWeekDay(weekDay: string): Observable<any> {
@@ -22,14 +22,15 @@ export class CompositionService {
     return null;
   }
 
-  getCompositionByTitleCode(compositions: Composition[], titleCode: string): any {
-    for (const composition of compositions) {
-      if (composition.titleCode === titleCode) {
-        this.loggingService.log('Found item by Id!');
-        return composition;
-      }
-    }
-    return null;
+  getCompositionByTitleCode(titleCode: string): Observable<any> {
+    // for (const composition of compositions) {
+    //   if (composition.titleCode === titleCode) {
+    //     this.loggingService.log('Found item by Id!');
+    //     return composition;
+    //   }
+    // }
+    // return null;
+    return this.http.get(`http://localhost:3000/compositions?titleCode=` + titleCode);
   }
 
   getCompositionsByGenreId(compositions: Composition[], genre: Genre): any {

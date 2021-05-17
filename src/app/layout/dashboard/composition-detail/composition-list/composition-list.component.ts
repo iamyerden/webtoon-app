@@ -23,9 +23,9 @@ export class CompositionListComponent implements OnInit {
   }
 
   getEpisodes(): void {
-    this.episodeService.getEpisodes().subscribe(res => {
-      this.episodes = this.episodeService.getEpisodesByCompositionId(res, this.currentComposition.id);
-      console.log(this.episodes);
+    this.episodeService.getEpisodesByCompositionId(this.currentComposition.id).subscribe(res => {
+      this.episodes = res;
+      console.log('episodes: ', this.episodes);
     });
   }
 

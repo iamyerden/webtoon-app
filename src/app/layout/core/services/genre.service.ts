@@ -13,17 +13,11 @@ export class GenreService {
   }
 
   getGenres(): Observable<any> {
-    return this.http.get('./assets/fake-db/genres.json');
+    return this.http.get('http://localhost:3000/genres');
   }
 
-  getGenreById(genres: Genre[], genreId: number): Genre {
-    for (const genre of genres) {
-      if (genre.id === genreId) {
-        this.loggingService.log('Found genre by id ' + genreId);
-        return genre;
-      }
-    }
-    return null;
+  getGenreById(genreId: number): Observable<any> {
+    return this.http.get(`http://localhost:3000/genres?id=` + genreId);
   }
 
   getGenreByValue(genres: Genre[], genreValue: string): Genre {

@@ -48,7 +48,10 @@ export class CompositionTabItemComponent implements OnInit, OnChanges {
   getCompositionGenres(): void {
     this.genreService.getGenres().subscribe(res => {
       for (const item of this.compositions) {
-        item.genre = this.genreService.getGenreById(res, item.genreId);
+        this.genreService.getGenreById(item.genreId).subscribe(resGenres => {
+          console.log('resGenres:', resGenres[0]);
+          item.genre = resGenres[0];
+        });
       }
       this.getCompositionsByTabItem();
     });

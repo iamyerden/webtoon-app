@@ -3,8 +3,8 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <ul class="navbar-nav w-100">
       <li class="nav-item" [routerLink]="'/explore/originals'">
         <a class="nav-link">Originals <span class="sr-only">(current)</span></a>
       </li>
@@ -13,6 +13,11 @@
       </li>
       <li class="nav-item" [routerLink]="'/explore/genre'">
         <a class="nav-link">Genres</a>
+      </li>
+
+      <li class="nav-item ml-auto mr-5">
+        <a *ngIf="!isLoggedInCheck" class="mr-5" (click)="login()">Login</a>
+        <a *ngIf="isLoggedInCheck" class="mr-5" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>
